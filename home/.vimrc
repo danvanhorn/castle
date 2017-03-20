@@ -1,6 +1,7 @@
-" LEADER {{{
+" MAPPING {{{
 " space  will be the leader, it's not as far away
 let mapleader=","
+inoremap jk <esc>
 " }}}
 
 " TAB  OPTIONS {{{ 
