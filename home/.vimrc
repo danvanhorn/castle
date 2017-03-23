@@ -1,5 +1,32 @@
+
+" Start dein and install plugins {{{
+if &compatible
+    set nocompatible
+endif
+set runtimepath+=/Users/danvanhorn/.vim/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('/Users/danvanhorn/.vim/dein')
+    call dein#begin('/Users/danvanhorn/.vim/dein')
+
+    call dein#add('/Users/danvanhorn/.vim/dein/repos/github.com/Shougo/dein.vim')
+
+    call dein#add('Shougo/unite.vim')
+    "File tree browser 
+    call dein#add('scrooloose/nerdtree')
+    call dein#add('vim-airline/vim-airline')
+    call dein#add('vim-airline/vim-airline-themes')
+    call dein#add('altercation/vim-colors-solarized')
+"    call dein#save_state()
+
+endif
+
+if dein#check_install()
+    call dein#install()
+endif
+" }}}
+
 " MAPPING {{{
-" space  will be the leader, it's not as far away
+" space will be the leader its not as far away
 let mapleader=","
 inoremap jk <esc>
 " }}}
@@ -30,6 +57,31 @@ set clipboard=unnamed
 
 " COLOR {{{
 syntax enable
+let g:solarized_termcolors = 256
+let g:solarized_termtrans =  1
+let g:solarized_degrade = 1
+let g:solarized_bold = 1
+let g:solarized_underline = 0
+let g:solarized_italic = 0 
+let g:solarized_contrast = "normal"
+let g:solarized_visibility= "normal"
+set background=dark
+colorscheme solarized
+" }}}
+
+" PLUGINS {{{
+" enable vim-airline the vim status bar
+set laststatus=2
+let g:airline#extenions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" NerdTree {{{
+let g:NERDTreeDirArrows = 1
+"let g:NERDTreeDirArrowExpandable = '▸'
+"let g:NERDTreeDirArrowCollapsible = '▾':
+nmap <F9> :NERDTreeToggle<CR>
+" }}}
+
 " }}}
 
 " FOLDING {{{
@@ -52,4 +104,6 @@ filetype plugin on
 set modeline
 set modelines=1
 "}}}
+
+call dein#end()
 " vim: foldmethod=marker:foldlevel=0:
