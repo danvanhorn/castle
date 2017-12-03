@@ -5,12 +5,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " MAPPING {{{
@@ -43,18 +41,18 @@ set hlsearch
 set clipboard=unnamed
 " }}}
 
-" COLOR {{{
+" COLOR {{{ 
 syntax enable
-"let g:solarized_termcolors = 256
-"let g:solarized_termtrans =  1
-"let g:solarized_degrade = 1
-"let g:solarized_bold = 1
-"let g:solarized_underline = 0
-"let g:solarized_italic = 0 
-"let g:solarized_contrast = "normal"
-"let g:solarized_visibility= "normal"
-"set background=dark
-"colorscheme solarized
+let g:solarized_termcolors = 256
+let g:solarized_termtrans =  1
+let g:solarized_degrade = 1
+let g:solarized_bold = 1
+let g:solarized_underline = 0
+let g:solarized_italic = 0 
+let g:solarized_contrast = "normal"
+let g:solarized_visibility= "normal"
+set background=dark
+colorscheme solarized
 " }}}
 
 " PLUGINS {{{
