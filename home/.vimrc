@@ -1,29 +1,17 @@
-
-" Start dein and install plugins {{{
-if &compatible
-    set nocompatible
-endif
-set runtimepath+=/Users/danvanhorn/.vim/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state('/Users/danvanhorn/.vim/dein')
-    call dein#begin('/Users/danvanhorn/.vim/dein')
-
-    call dein#add('/Users/danvanhorn/.vim/dein/repos/github.com/Shougo/dein.vim')
-
-    call dein#add('Shougo/unite.vim')
-    "File tree browser 
-    call dein#add('scrooloose/nerdtree')
-    call dein#add('vim-airline/vim-airline')
-    call dein#add('vim-airline/vim-airline-themes')
-    call dein#add('altercation/vim-colors-solarized')
-"    call dein#save_state()
-
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-if dein#check_install()
-    call dein#install()
-endif
-" }}}
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
+call plug#end()
 
 " MAPPING {{{
 " space will be the leader its not as far away
@@ -57,16 +45,16 @@ set clipboard=unnamed
 
 " COLOR {{{
 syntax enable
-let g:solarized_termcolors = 256
-let g:solarized_termtrans =  1
-let g:solarized_degrade = 1
-let g:solarized_bold = 1
-let g:solarized_underline = 0
-let g:solarized_italic = 0 
-let g:solarized_contrast = "normal"
-let g:solarized_visibility= "normal"
-set background=dark
-colorscheme solarized
+"let g:solarized_termcolors = 256
+"let g:solarized_termtrans =  1
+"let g:solarized_degrade = 1
+"let g:solarized_bold = 1
+"let g:solarized_underline = 0
+"let g:solarized_italic = 0 
+"let g:solarized_contrast = "normal"
+"let g:solarized_visibility= "normal"
+"set background=dark
+"colorscheme solarized
 " }}}
 
 " PLUGINS {{{
@@ -105,5 +93,4 @@ set modeline
 set modelines=1
 "}}}
 
-call dein#end()
 " vim: foldmethod=marker:foldlevel=0:
