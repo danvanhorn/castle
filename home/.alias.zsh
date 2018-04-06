@@ -10,11 +10,16 @@ alias tkill='tmux kill-session -t'
 alias ev='vim ~/.vimrc'
 alias et='vim ~/.tmux.conf'
 alias ez='vim ~/.zshrc'
+alias ea='vim ~/..alias.zsh'
 
 # connect to the school server
 alias engr='ssh vanhornd@access.engr.oregonstate.edu'
+alias os2='ssh vanhornd@os2.engr.oregonstate.edu'
 
 # spotify aliases
 # only usable when the OSX plugin is active
 alias splay='spotify play'
 alias sp='spotify'
+
+# useful commands
+alias lls='ls -pla'
