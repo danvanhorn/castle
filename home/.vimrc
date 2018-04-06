@@ -5,10 +5,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'justinmk/vim-syntax-extra'
+Plug 'tomtom/tcomment_vim'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 call plug#end()
 
 " MAPPING {{{
@@ -39,6 +42,22 @@ set showmatch
 set incsearch
 set hlsearch
 set clipboard=unnamed
+" removes the mode from bottom line
+" shown in vim-lightline
+set noshowmode
+
+" lightline config
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ }
+      \ }
+
 " }}}
 
 " COLOR {{{ 
@@ -55,20 +74,37 @@ set background=dark
 colorscheme solarized
 " }}}
 
+
 " PLUGINS {{{
 " enable vim-airline the vim status bar
 set laststatus=2
 let g:airline#extenions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+" Syntax {{{
+
+" Haskell
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+
+" C
+"
+
+" }}
+
 " NerdTree {{{
 let g:NERDTreeDirArrows = 1
 "let g:NERDTreeDirArrowExpandable = '▸'
 "let g:NERDTreeDirArrowCollapsible = '▾':
 nmap <F9> :NERDTreeToggle<CR>
-" }}}
+" }}} 
 
-" }}}
+" }}} 
 
 " FOLDING {{{
 
@@ -89,6 +125,6 @@ set nocompatible
 filetype plugin on
 set modeline
 set modelines=1
-"}}}
+"}}} 
 
 " vim: foldmethod=marker:foldlevel=0:
