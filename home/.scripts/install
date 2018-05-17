@@ -1,0 +1,19 @@
+#bin/bash
+
+#we install ZSH if it is not already installed
+echo "Updating system and installing zsh..."
+yes | apt-get update
+yes | apt-get install upgrade
+yes | apt-get install zsh
+
+#install oh-my-zsh
+echo "installing oh-my-zsh"
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+#start zsh
+echo "Starting zsh..."
+zsh
+
+# zsh initialize
+echo "Renaming .zshrc.pre-oh-my-zsh to .zshrc"
+mv .zshrc.pre-oh-my-zsh .zschrc
