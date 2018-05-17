@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # aliases for Tmux
 alias tmux='tmux -2'
 alias ta='tmux attach -t'
@@ -29,4 +27,3 @@ alias sp='spotify'
 
 # useful commands
 alias lls='ls -pla'
->>>>>>> bbb3ca74ee8cb5d8767aa09e962b1f86054bb7af
