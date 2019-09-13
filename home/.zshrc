@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
- export PATH=$HOME/bin:/usr/local/bin:$PATH.
+export MYSQL_PATH=/usr/local/Cellar/mysql/5.6.27
+export GOPATH=/usr/local/go
+export PATH=/$HOME/bin:$GOPATH/bin:/usr/local/bin:$PATH.
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -88,3 +90,10 @@ export EDITOR=$VISUAL
 # aliases are kept in the following path
 source $HOME/.alias.zsh
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

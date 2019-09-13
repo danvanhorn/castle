@@ -74,6 +74,10 @@ set background=dark
 colorscheme solarized
 " }}}
 
+" MOUSE {{{
+set mouse=a
+set ttymouse=xterm
+" }}}
 
 " PLUGINS {{{
 " enable vim-airline the vim status bar
